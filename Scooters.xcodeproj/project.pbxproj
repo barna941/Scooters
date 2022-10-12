@@ -8,14 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		F8921C7D28F60A7000504274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C7C28F60A7000504274 /* AppDelegate.swift */; };
-		F8921C7F28F60A7000504274 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C7E28F60A7000504274 /* SceneDelegate.swift */; };
-		F8921C8128F60A7000504274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C8028F60A7000504274 /* ViewController.swift */; };
-		F8921C8428F60A7000504274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8921C8228F60A7000504274 /* Main.storyboard */; };
 		F8921C8628F60A7100504274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8921C8528F60A7100504274 /* Assets.xcassets */; };
 		F8921C8928F60A7100504274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8921C8728F60A7100504274 /* LaunchScreen.storyboard */; };
 		F8921C9428F60A7200504274 /* ScootersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C9328F60A7200504274 /* ScootersTests.swift */; };
 		F8921C9E28F60A7200504274 /* ScootersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C9D28F60A7200504274 /* ScootersUITests.swift */; };
 		F8921CA028F60A7200504274 /* ScootersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C9F28F60A7200504274 /* ScootersUITestsLaunchTests.swift */; };
+		F8921CB328F610AC00504274 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CB228F610AC00504274 /* HomeCoordinator.swift */; };
+		F8921CB528F610EE00504274 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CB428F610EE00504274 /* AppCoordinator.swift */; };
+		F8921CB828F6126000504274 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F8921CB728F6126000504274 /* Alamofire */; };
+		F8921CBB28F612A000504274 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = F8921CBA28F612A000504274 /* Swinject */; };
+		F8921CBE28F749F300504274 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8921CC028F749F300504274 /* Localizable.strings */; };
+		F8921CC428F74B4500504274 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CC328F74B4500504274 /* Assets.swift */; };
+		F8921CC628F74F2000504274 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CC528F74F2000504274 /* Strings.swift */; };
+		F8921CC828F7517900504274 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CC728F7517900504274 /* Dependencies.swift */; };
+		F8921CCB28F7581C00504274 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCA28F7581C00504274 /* UIViewExtensions.swift */; };
+		F8921CCD28F7596F00504274 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCC28F7596F00504274 /* HomeViewController.swift */; };
+		F8921CCF28F7599500504274 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCE28F7599500504274 /* HomePresenter.swift */; };
+		F8921CD228F75B3800504274 /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD128F75B3800504274 /* RootContainerViewController.swift */; };
+		F8921CD428F75D4400504274 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +48,6 @@
 /* Begin PBXFileReference section */
 		F8921C7928F60A7000504274 /* Scooters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scooters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8921C7C28F60A7000504274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8921C7E28F60A7000504274 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8921C8028F60A7000504274 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F8921C8328F60A7000504274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8921C8528F60A7100504274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8921C8828F60A7100504274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8921C8A28F60A7100504274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +56,18 @@
 		F8921C9928F60A7200504274 /* ScootersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScootersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8921C9D28F60A7200504274 /* ScootersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersUITests.swift; sourceTree = "<group>"; };
 		F8921C9F28F60A7200504274 /* ScootersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8921CB228F610AC00504274 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F8921CB428F610EE00504274 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F8921CBF28F749F300504274 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F8921CC128F74A0300504274 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F8921CC328F74B4500504274 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		F8921CC528F74F2000504274 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		F8921CC728F7517900504274 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
+		F8921CCA28F7581C00504274 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		F8921CCC28F7596F00504274 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F8921CCE28F7599500504274 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F8921CD128F75B3800504274 /* RootContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainerViewController.swift; sourceTree = "<group>"; };
+		F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8921CB828F6126000504274 /* Alamofire in Frameworks */,
+				F8921CBB28F612A000504274 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +120,12 @@
 		F8921C7B28F60A7000504274 /* Scooters */ = {
 			isa = PBXGroup;
 			children = (
-				F8921C7C28F60A7000504274 /* AppDelegate.swift */,
-				F8921C7E28F60A7000504274 /* SceneDelegate.swift */,
-				F8921C8028F60A7000504274 /* ViewController.swift */,
-				F8921C8228F60A7000504274 /* Main.storyboard */,
-				F8921C8528F60A7100504274 /* Assets.xcassets */,
-				F8921C8728F60A7100504274 /* LaunchScreen.storyboard */,
-				F8921C8A28F60A7100504274 /* Info.plist */,
+				F8921CAD28F6105D00504274 /* App */,
+				F8921CAF28F6107600504274 /* Configuration */,
+				F8921CD028F75B2600504274 /* DI */,
+				F8921CC928F7580800504274 /* Extensions */,
+				F8921CAE28F6106600504274 /* Resources */,
+				F8921CB028F6108D00504274 /* Scenes */,
 			);
 			path = Scooters;
 			sourceTree = "<group>";
@@ -127,6 +147,79 @@
 			path = ScootersUITests;
 			sourceTree = "<group>";
 		};
+		F8921CAD28F6105D00504274 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F8921C7C28F60A7000504274 /* AppDelegate.swift */,
+				F8921CB428F610EE00504274 /* AppCoordinator.swift */,
+				F8921CD128F75B3800504274 /* RootContainerViewController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F8921CAE28F6106600504274 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CC228F74AEB00504274 /* Generated */,
+				F8921C8528F60A7100504274 /* Assets.xcassets */,
+				F8921C8728F60A7100504274 /* LaunchScreen.storyboard */,
+				F8921CC028F749F300504274 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8921CAF28F6107600504274 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F8921C8A28F60A7100504274 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		F8921CB028F6108D00504274 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CB128F6109800504274 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F8921CB128F6109800504274 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CB228F610AC00504274 /* HomeCoordinator.swift */,
+				F8921CCC28F7596F00504274 /* HomeViewController.swift */,
+				F8921CCE28F7599500504274 /* HomePresenter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F8921CC228F74AEB00504274 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CC328F74B4500504274 /* Assets.swift */,
+				F8921CC528F74F2000504274 /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		F8921CC928F7580800504274 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CCA28F7581C00504274 /* UIViewExtensions.swift */,
+				F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F8921CD028F75B2600504274 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CC728F7517900504274 /* Dependencies.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8921CA328F60A7200504274 /* Build configuration list for PBXNativeTarget "Scooters" */;
 			buildPhases = (
+				F8921CAC28F60AB600504274 /* SwiftLint */,
 				F8921C7528F60A7000504274 /* Sources */,
 				F8921C7628F60A7000504274 /* Frameworks */,
 				F8921C7728F60A7000504274 /* Resources */,
@@ -143,6 +237,10 @@
 			dependencies = (
 			);
 			name = Scooters;
+			packageProductDependencies = (
+				F8921CB728F6126000504274 /* Alamofire */,
+				F8921CBA28F612A000504274 /* Swinject */,
+			);
 			productName = Scooters;
 			productReference = F8921C7928F60A7000504274 /* Scooters.app */;
 			productType = "com.apple.product-type.application";
@@ -213,8 +311,13 @@
 			knownRegions = (
 				en,
 				Base,
+				hu,
 			);
 			mainGroup = F8921C7028F60A6F00504274;
+			packageReferences = (
+				F8921CB628F6126000504274 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F8921CB928F612A000504274 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = F8921C7A28F60A7000504274 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,8 +335,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8921C8928F60A7100504274 /* LaunchScreen.storyboard in Resources */,
+				F8921CBE28F749F300504274 /* Localizable.strings in Resources */,
 				F8921C8628F60A7100504274 /* Assets.xcassets in Resources */,
-				F8921C8428F60A7000504274 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +356,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F8921CAC28F60AB600504274 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which mint >/dev/null; then\n  mint run swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8921C7528F60A7000504274 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8921C8128F60A7000504274 /* ViewController.swift in Sources */,
+				F8921CB528F610EE00504274 /* AppCoordinator.swift in Sources */,
+				F8921CD228F75B3800504274 /* RootContainerViewController.swift in Sources */,
+				F8921CC828F7517900504274 /* Dependencies.swift in Sources */,
+				F8921CCB28F7581C00504274 /* UIViewExtensions.swift in Sources */,
+				F8921CD428F75D4400504274 /* UIViewControllerExtensions.swift in Sources */,
+				F8921CCF28F7599500504274 /* HomePresenter.swift in Sources */,
 				F8921C7D28F60A7000504274 /* AppDelegate.swift in Sources */,
-				F8921C7F28F60A7000504274 /* SceneDelegate.swift in Sources */,
+				F8921CCD28F7596F00504274 /* HomeViewController.swift in Sources */,
+				F8921CC428F74B4500504274 /* Assets.swift in Sources */,
+				F8921CC628F74F2000504274 /* Strings.swift in Sources */,
+				F8921CB328F610AC00504274 /* HomeCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,20 +429,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F8921C8228F60A7000504274 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F8921C8328F60A7000504274 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F8921C8728F60A7100504274 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F8921C8828F60A7100504274 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F8921CC028F749F300504274 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8921CBF28F749F300504274 /* en */,
+				F8921CC128F74A0300504274 /* hu */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -320,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -366,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -380,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -420,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -439,12 +574,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B45VTM2JTZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Scooters/Info.plist;
+				INFOPLIST_FILE = Scooters/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,9 +587,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hu.barnabasillanicz.Scooters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,12 +605,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B45VTM2JTZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Scooters/Info.plist;
+				INFOPLIST_FILE = Scooters/Configuration/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -480,9 +618,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hu.barnabasillanicz.Scooters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -602,6 +743,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F8921CB628F6126000504274 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = exactVersion;
+				version = 5.6.2;
+			};
+		};
+		F8921CB928F612A000504274 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F8921CB728F6126000504274 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8921CB628F6126000504274 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F8921CBA28F612A000504274 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F8921CB928F612A000504274 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F8921C7128F60A6F00504274 /* Project object */;
 }

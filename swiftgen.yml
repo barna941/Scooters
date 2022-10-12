@@ -1,0 +1,11 @@
+xcassets:
+    inputs: Scooters/Resources
+    outputs:
+        templateName: swift5
+        output: Scooters/Resources/Generated/Assets.swift
+
+strings:
+  inputs: Scooters/Resources/en.lproj/Localizable.strings
+  outputs:
+    templateName: structured-swift5
+    output: Scooters/Resources/Generated/Strings.swift
