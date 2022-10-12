@@ -26,6 +26,10 @@
 		F8921CCF28F7599500504274 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCE28F7599500504274 /* HomePresenter.swift */; };
 		F8921CD228F75B3800504274 /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD128F75B3800504274 /* RootContainerViewController.swift */; };
 		F8921CD428F75D4400504274 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */; };
+		F8921CD728F766A700504274 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD628F766A700504274 /* NetworkClient.swift */; };
+		F8921CDA28F768D600504274 /* ScootersApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD928F768D600504274 /* ScootersApi.swift */; };
+		F8921CDE28F76AB200504274 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CDD28F76AB200504274 /* HomeAssembly.swift */; };
+		F8921CE028F76AC900504274 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CDF28F76AC900504274 /* NetworkAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		F8921CCE28F7599500504274 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		F8921CD128F75B3800504274 /* RootContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainerViewController.swift; sourceTree = "<group>"; };
 		F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		F8921CD628F766A700504274 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		F8921CD928F768D600504274 /* ScootersApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersApi.swift; sourceTree = "<group>"; };
+		F8921CDD28F76AB200504274 /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		F8921CDF28F76AC900504274 /* NetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +132,7 @@
 				F8921CAF28F6107600504274 /* Configuration */,
 				F8921CD028F75B2600504274 /* DI */,
 				F8921CC928F7580800504274 /* Extensions */,
+				F8921CD528F7669800504274 /* Network */,
 				F8921CAE28F6106600504274 /* Resources */,
 				F8921CB028F6108D00504274 /* Scenes */,
 			);
@@ -215,9 +224,44 @@
 		F8921CD028F75B2600504274 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				F8921CDC28F76AA400504274 /* Assemblies */,
 				F8921CC728F7517900504274 /* Dependencies.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		F8921CD528F7669800504274 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CD828F768A500504274 /* API */,
+				F8921CDB28F7690500504274 /* DTO */,
+				F8921CD628F766A700504274 /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F8921CD828F768A500504274 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CD928F768D600504274 /* ScootersApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F8921CDB28F7690500504274 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		F8921CDC28F76AA400504274 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				F8921CDD28F76AB200504274 /* HomeAssembly.swift */,
+				F8921CDF28F76AC900504274 /* NetworkAssembly.swift */,
+			);
+			path = Assemblies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,11 +432,15 @@
 				F8921CCB28F7581C00504274 /* UIViewExtensions.swift in Sources */,
 				F8921CD428F75D4400504274 /* UIViewControllerExtensions.swift in Sources */,
 				F8921CCF28F7599500504274 /* HomePresenter.swift in Sources */,
+				F8921CDE28F76AB200504274 /* HomeAssembly.swift in Sources */,
 				F8921C7D28F60A7000504274 /* AppDelegate.swift in Sources */,
+				F8921CE028F76AC900504274 /* NetworkAssembly.swift in Sources */,
 				F8921CCD28F7596F00504274 /* HomeViewController.swift in Sources */,
 				F8921CC428F74B4500504274 /* Assets.swift in Sources */,
+				F8921CDA28F768D600504274 /* ScootersApi.swift in Sources */,
 				F8921CC628F74F2000504274 /* Strings.swift in Sources */,
 				F8921CB328F610AC00504274 /* HomeCoordinator.swift in Sources */,
+				F8921CD728F766A700504274 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
