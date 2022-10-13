@@ -9,4 +9,10 @@ extension UIView {
             subview.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+
+    @discardableResult
+    func usingAutoLayout() -> Self {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        return self
+    }
 }

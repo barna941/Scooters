@@ -13,6 +13,7 @@ extension Dependencies {
     static func registerServices() {
         dependencies.assembler.apply(
             assemblies: [
+                CoreAssembly(),
                 NetworkAssembly(),
                 HomeAssembly()
             ]

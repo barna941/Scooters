@@ -6,8 +6,14 @@ struct NetworkAssembly: Assembly {
         container.register(NetworkClientProtocol.self) { _ in
             NetworkClient()
         }
-        container.register(ScootersApiProtocol.self) { r in
-            ScootersApi(netwworkClient: r.resolve(NetworkClientProtocol.self)!)
+        container.register(VehiclesApiProtocol.self) { r in
+            VehiclesApi(
+                netwworkClient: r.resolve(NetworkClientProtocol.self)!,
+                baseUrlProvider: r.resolve(BaseUrlProviderProtocol.self)!
+            )
+        }
+        container.register(BaseUrlProviderProtocol.self) { _ in
+            BaseUrlProvider()
         }
     }
 }

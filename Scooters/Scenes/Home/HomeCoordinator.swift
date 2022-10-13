@@ -1,7 +1,7 @@
 import UIKit
 
 protocol HomeCoordinatorProtocol {
-    func start(in viewController: UIViewController)
+    func start(in navigationController: UINavigationController)
 }
 
 final class HomeCoordinator: HomeCoordinatorProtocol {
@@ -11,7 +11,7 @@ final class HomeCoordinator: HomeCoordinatorProtocol {
         self.homeViewController = homeViewController
     }
 
-    func start(in viewController: UIViewController) {
-        viewController.add(childViewController: homeViewController)
+    func start(in navigationController: UINavigationController) {
+        navigationController.setViewControllers([homeViewController], animated: false)
     }
 }
