@@ -1,7 +1,7 @@
 import MapKit
 
-protocol HomePresenterProcotol: AnyObject {
-    var didReceiveVehicles: (([HomeModel.VehicleViewModel]) -> Void)? { get set }
+protocol HomePresenterProcotol: ErrorPresenterProtocol, LoadingPresenterProtocol {
+    var vehiclesReceived: (([HomeModel.VehicleViewModel]) -> Void)? { get set }
 
     func viewDidLoad()
 }
@@ -9,19 +9,25 @@ protocol HomePresenterProcotol: AnyObject {
 final class HomePresenter: HomePresenterProcotol {
     private let interactor: HomeInteractorProtocol
 
-    var didReceiveVehicles: (([HomeModel.VehicleViewModel]) -> Void)?
+    var vehiclesReceived: (([HomeModel.VehicleViewModel]) -> Void)?
+    var errorReceived: ((PresentableError) -> Void)?
+    var updateLoadingVisibility: ((Bool) -> Void)?
 
     init(interactor: HomeInteractorProtocol) {
         self.interactor = interactor
     }
 
     func viewDidLoad() {
-        interactor.fetchVehicles { [weak self] result in
-            switch result {
-            case let .success(dto):
-                self?.handleVehicles(dto: dto)
-            case let .failure(error):
-                print(error)
+        updateLoadingVisibility?(true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.interactor.fetchVehicles { [weak self] result in
+                self?.updateLoadingVisibility?(false)
+                switch result {
+                case let .success(dto):
+                    self?.handleVehicles(dto: dto)
+                case .failure:
+                    self?.errorReceived?(.network)
+                }
             }
         }
     }
@@ -30,7 +36,7 @@ final class HomePresenter: HomePresenterProcotol {
 extension HomePresenter {
     private func handleVehicles(dto: VehiclesResponseDTO) {
         let viewModels = mapVehicles(dto: dto)
-        didReceiveVehicles?(viewModels)
+        vehiclesReceived?(viewModels)
     }
 
     private func mapVehicles(dto: VehiclesResponseDTO) -> [HomeModel.VehicleViewModel] {
@@ -38,23 +44,10 @@ extension HomePresenter {
             HomeModel.VehicleViewModel(
                 annotation: HomeModel.VehicleAnnotation(
                     coordinate: CLLocationCoordinate2D(latitude: vehicleDto.attributes.lat, longitude: vehicleDto.attributes.lng),
-                    icon: icon(for: vehicleDto.attributes.vehicleType)
+                    icon: vehicleDto.attributes.vehicleType.icon
                 ),
                 type: vehicleDto.attributes.vehicleType
             )
-        }
-    }
-
-    private func icon(for vehicleType: VehicleType) -> UIImage {
-        switch vehicleType {
-        case .escooter:
-            return Asset.Icons.scooterIcon.image
-        case .emoped:
-            return Asset.Icons.scooterIcon.image
-        case .ebicycle:
-            return Asset.Icons.scooterIcon.image
-        case .unknown:
-            return Asset.Icons.scooterIcon.image
         }
     }
 }

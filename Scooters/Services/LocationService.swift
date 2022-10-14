@@ -1,11 +1,12 @@
 import CoreLocation
 import UIKit
 
-protocol LocationServiceProtocol {
+protocol LocationServiceProtocol: AnyObject {
     var isLocationEnabled: Bool { get }
     var shouldRequestLocationAuthorization: Bool { get }
     var authorizationStatusDidChange: (() -> Void)? { get set }
     var didUpdateLocation: ((CLLocation) -> Void)? { get set }
+    var location: CLLocation? { get }
 
     func requestLocationAuthorization()
 }
@@ -23,6 +24,8 @@ final class LocationService: NSObject, LocationServiceProtocol {
 
     var authorizationStatusDidChange: (() -> Void)?
     var didUpdateLocation: ((CLLocation) -> Void)?
+
+    var location: CLLocation? { locationManager.location }
 
     var isLocationEnabled: Bool {
         switch locationManager.authorizationStatus {

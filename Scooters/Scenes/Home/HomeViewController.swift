@@ -1,14 +1,21 @@
 import MapKit
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController, ErrorHandlingView {
     private let presenter: HomePresenterProcotol
+
+    private let indicatorView: ActivityIndicatorView = {
+        let view = ActivityIndicatorView()
+        view.isHidden = true
+        return view
+    }()
 
     private lazy var mapView: MKMapView = {
         let mapView = MKMapView()
         mapView.delegate = self
         mapView.register(VehicleAnnotationView.self, forAnnotationViewWithReuseIdentifier: VehicleAnnotationView.reuseIdentifier)
         mapView.register(VehicleClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: VehicleClusterAnnotationView.reuseIdentifier)
+        mapView.showsUserLocation = true
         return mapView
     }()
 
@@ -27,41 +34,82 @@ final class HomeViewController: UIViewController {
 
         customizeViews()
         setupConstraints()
-        bindVehicles()
+        bindPresenter()
 
         presenter.viewDidLoad()
     }
 
     private func customizeViews() {
+        navigationController?.navigationBar.isHidden = true
         title = L10n.homeTitle
         view.backgroundColor = Asset.Colors.primaryBackground.color
+
         view.addSubview(mapView.usingAutoLayout())
+        view.addSubview(indicatorView.usingAutoLayout())
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mapViewConstraints()
+            mapViewConstraints(),
+            indicatorViewConstraints()
         ])
     }
 
-    private func mapViewConstraints() -> [NSLayoutConstraint] {
-        [
-            mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ]
-    }
-
-    private func bindVehicles() {
-        presenter.didReceiveVehicles = { [weak self] vehicleViewModels in
+    private func bindPresenter() {
+        presenter.vehiclesReceived = { [weak self] vehicleViewModels in
             self?.showVehicles(viewModels: vehicleViewModels)
+        }
+        presenter.errorReceived = { [weak self] error in
+            self?.showError(error: error)
+        }
+        presenter.updateLoadingVisibility = { [weak self] show in
+            if show {
+                self?.showLoading()
+            } else {
+                self?.hideLoading()
+            }
         }
     }
 
     private func showVehicles(viewModels: [HomeModel.VehicleViewModel]) {
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(viewModels.map { $0.annotation })
+    }
+}
+
+// MARK: - Layout
+
+extension HomeViewController {
+    private func indicatorViewConstraints() -> [NSLayoutConstraint] {
+        [
+            indicatorView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            indicatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            indicatorView.widthAnchor.constraint(equalToConstant: 48),
+            indicatorView.heightAnchor.constraint(equalToConstant: 48)
+        ]
+    }
+
+    private func mapViewConstraints() -> [NSLayoutConstraint] {
+        [
+            mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mapView.topAnchor.constraint(equalTo: view.topAnchor),
+            mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ]
+    }
+}
+
+// MARK: LoadingView
+
+extension HomeViewController: LoadingView {
+    func showLoading() {
+        indicatorView.startAnimating()
+        indicatorView.isHidden = false
+    }
+
+    func hideLoading() {
+        indicatorView.stopAnimating()
+        indicatorView.isHidden = true
     }
 }
 

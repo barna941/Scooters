@@ -11,8 +11,8 @@ final class AppCoordinator {
     func start() {
         window?.rootViewController = rootNavigationController
         window?.makeKeyAndVisible()
-        let homeCoordinator = Dependencies.resolver.resolve(HomeCoordinatorProtocol.self)!
-        homeCoordinator.start(in: rootNavigationController)
+        let homeCoordinator = Dependencies.resolver.resolve(HomeCoordinatorProtocol.self, argument: rootNavigationController)!
+        homeCoordinator.start()
         configureNavBarAppearance()
     }
 }

@@ -3,8 +3,11 @@ import Swinject
 // swiftlint:disable identifier_name
 struct HomeAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(HomeCoordinatorProtocol.self) { r in
-            HomeCoordinator(homeViewController: r.resolve(HomeViewController.self)!)
+        container.register(HomeCoordinatorProtocol.self) { r, rootVc in
+            HomeCoordinator(
+                rootNavigationController: rootVc,
+                homeViewController: r.resolve(HomeViewController.self)!
+            )
         }
         container.register(HomePresenterProcotol.self) { r in
             HomePresenter(interactor: r.resolve(HomeInteractorProtocol.self)!)
@@ -15,7 +18,7 @@ struct HomeAssembly: Assembly {
         container.register(HomeInteractorProtocol.self) { r in
             HomeInteractor(
                 vehiclesApi: r.resolve(VehiclesApiProtocol.self)!,
-                locationService: r.resolve(LocationServiceProtocol.self)!
+                vehicleRepositoryService: r.resolve(VehicleRepositoryServiceProtocol.self)!
             )
         }
     }

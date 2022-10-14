@@ -15,7 +15,8 @@ extension Dependencies {
             assemblies: [
                 CoreAssembly(),
                 NetworkAssembly(),
-                HomeAssembly()
+                HomeAssembly(),
+                VehicleDetailsAssembly()
             ]
         )
     }

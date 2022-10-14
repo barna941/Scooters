@@ -1,1 +1,12 @@
 "home_title" = "Járművek";
+"network_error" = "Hiba történt a hálózati kommunikáció során";
+"other_error" = "Hiba történt";
+"ok_title" = "OK";
+"vehicle_details_title" = "Legközelebbi jármű";
+"vehicle_details_has_helmetbox" = "Bukósisak tartóval";
+"vehicle_details_has_no_helmetbox" = "Bukósisak tartó nélkül";
+"kilometers_per_hour" = "km/h";
+"percent" = "%%";
+"vehicle_type_escooter" = "E-roller";
+"vehicle_type_emoped" = "E-moped";
+"vehicle_type_ebicyle" = "E-bicikli";

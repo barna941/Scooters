@@ -1,1 +1,12 @@
 "home_title" = "Vehicles";
+"network_error" = "An error occured during network communication";
+"other_error" = "An error occured";
+"ok_title" = "OK";
+"vehicle_details_title" = "Closest vehicle";
+"vehicle_details_has_helmetbox" = "Has helmetbox";
+"vehicle_details_has_no_helmetbox" = "Without helmetbox";
+"kilometers_per_hour" = "km/h";
+"percent" = "%%";
+"vehicle_type_escooter" = "Escooter";
+"vehicle_type_emoped" = "Emoped";
+"vehicle_type_ebicyle" = "Ebicyle";
