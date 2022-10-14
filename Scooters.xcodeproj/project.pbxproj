@@ -39,7 +39,6 @@
 		F8921CCB28F7581C00504274 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCA28F7581C00504274 /* UIViewExtensions.swift */; };
 		F8921CCD28F7596F00504274 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCC28F7596F00504274 /* HomeViewController.swift */; };
 		F8921CCF28F7599500504274 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CCE28F7599500504274 /* HomePresenter.swift */; };
-		F8921CD228F75B3800504274 /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD128F75B3800504274 /* RootContainerViewController.swift */; };
 		F8921CD428F75D4400504274 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */; };
 		F8921CD728F766A700504274 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD628F766A700504274 /* NetworkClient.swift */; };
 		F8921CDA28F768D600504274 /* VehiclesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CD928F768D600504274 /* VehiclesApi.swift */; };
@@ -115,7 +114,6 @@
 		F8921CCA28F7581C00504274 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		F8921CCC28F7596F00504274 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8921CCE28F7599500504274 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		F8921CD128F75B3800504274 /* RootContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainerViewController.swift; sourceTree = "<group>"; };
 		F8921CD328F75D4400504274 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		F8921CD628F766A700504274 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		F8921CD928F768D600504274 /* VehiclesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesApi.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 			children = (
 				F8921C7C28F60A7000504274 /* AppDelegate.swift */,
 				F8921CB428F610EE00504274 /* AppCoordinator.swift */,
-				F8921CD128F75B3800504274 /* RootContainerViewController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -567,7 +564,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8921CB528F610EE00504274 /* AppCoordinator.swift in Sources */,
-				F8921CD228F75B3800504274 /* RootContainerViewController.swift in Sources */,
 				F82A0BA928F9E960004D9B3D /* VehicleFinderService.swift in Sources */,
 				F8921CC828F7517900504274 /* Dependencies.swift in Sources */,
 				F8921CEB28F8819900504274 /* VehiclesResponseDTO.swift in Sources */,
