@@ -1,43 +1,42 @@
 import Foundation
 
 protocol VehicleDetailsPresenterProcotol: AnyObject {
-    var vehicleReceived: ((VehicleDetailsViewModel) -> Void)? { get set }
-
-    func viewDidLoad()
+    var viewModelReceived: ((VehicleDetailsViewModel) -> Void)? { get set }
+    var authorizationStatusDisabled: (() -> Void)? { get set }
 }
 
 final class VehicleDetailsPresenter: VehicleDetailsPresenterProcotol {
     private let interactor: VehicleDetailsInteractorProtocol
-    private var viewModel: VehicleDetailsViewModel?
+    private var vehicle: VehicleDetailsViewModel.Vehicle?
 
-    var vehicleReceived: ((VehicleDetailsViewModel) -> Void)?
+    var viewModelReceived: ((VehicleDetailsViewModel) -> Void)?
+    var authorizationStatusDisabled: (() -> Void)?
 
     init(interactor: VehicleDetailsInteractorProtocol) {
         self.interactor = interactor
 
         interactor.didFindClosestVehicle = { [weak self] vehicle in
-            self?.handleClosestVehicle(vehicle: vehicle)
+            self?.handleClosestVehicle(vehicleDto: vehicle)
         }
-    }
-
-    func viewDidLoad() {
-        interactor.requestLocationAuthorizationIfNeeded()
+        interactor.authorizationStatusDisabled = { [weak self] in
+            self?.viewModelReceived?(.disabled)
+        }
     }
 }
 
 extension VehicleDetailsPresenter {
-    private func handleClosestVehicle(vehicle: VehicleDTO) {
-        guard vehicle.id != viewModel?.id else {
+    private func handleClosestVehicle(vehicleDto: VehicleDTO) {
+        guard vehicle?.id != vehicleDto.id else {
             return
         }
-        let vehicleViewModel = VehicleDetailsViewModel(
-            id: vehicle.id,
-            type: vehicle.attributes.vehicleType.title,
-            batteryLevel: "\(vehicle.attributes.batteryLevel)\(L10n.percent)",
-            helmetBoxText: vehicle.attributes.hasHelmetBox ? L10n.vehicleDetailsHasHelmetbox : L10n.vehicleDetailsHasNoHelmetbox,
-            maxSpeed: "\(vehicle.attributes.maxSpeed) \(L10n.kilometersPerHour)"
+        let vehicle = VehicleDetailsViewModel.Vehicle(
+            id: vehicleDto.id,
+            type: vehicleDto.attributes.vehicleType.title,
+            batteryLevel: "\(vehicleDto.attributes.batteryLevel)\(L10n.percent)",
+            helmetBoxText: vehicleDto.attributes.hasHelmetBox ? L10n.vehicleDetailsHasHelmetbox : L10n.vehicleDetailsHasNoHelmetbox,
+            maxSpeed: "\(vehicleDto.attributes.maxSpeed) \(L10n.kilometersPerHour)"
         )
-        vehicleReceived?(vehicleViewModel)
-        viewModel = vehicleViewModel
+        viewModelReceived?(.enabled(vehicle: vehicle))
+        self.vehicle = vehicle
     }
 }

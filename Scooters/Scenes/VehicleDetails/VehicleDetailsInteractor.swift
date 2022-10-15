@@ -2,8 +2,7 @@ import CoreLocation
 
 protocol VehicleDetailsInteractorProtocol: AnyObject {
     var didFindClosestVehicle: ((VehicleDTO) -> Void)? { get set }
-
-    func requestLocationAuthorizationIfNeeded()
+    var authorizationStatusDisabled: (() -> Void)? { get set }
 }
 
 final class VehicleDetailsInteractor: VehicleDetailsInteractorProtocol {
@@ -12,6 +11,7 @@ final class VehicleDetailsInteractor: VehicleDetailsInteractorProtocol {
     private let vehicleFinderService: VehicleFinderServiceProtocol
 
     var didFindClosestVehicle: ((VehicleDTO) -> Void)?
+    var authorizationStatusDisabled: (() -> Void)?
 
     init(
         vehicleRepositoryService: VehicleRepositoryServiceProtocol,
@@ -25,15 +25,13 @@ final class VehicleDetailsInteractor: VehicleDetailsInteractorProtocol {
         locationService.didUpdateLocation = { [weak self] location in
             self?.findClosestVehicle(to: location)
         }
+        locationService.authorizationStatusDidChange = { [weak self] in
+            self?.handleAuthorizationStatusChange()
+        }
         vehicleRepositoryService.vehiclesUpdated = { [weak self] in
             guard let location = self?.locationService.location else { return }
             self?.findClosestVehicle(to: location)
         }
-    }
-
-    func requestLocationAuthorizationIfNeeded() {
-        guard locationService.shouldRequestLocationAuthorization else { return }
-        locationService.requestLocationAuthorization()
     }
 }
 
@@ -43,5 +41,13 @@ extension VehicleDetailsInteractor {
             return
         }
         didFindClosestVehicle?(closestVehicle)
+    }
+
+    private func handleAuthorizationStatusChange() {
+        if locationService.shouldRequestLocationAuthorization {
+            locationService.requestLocationAuthorization()
+        } else if !locationService.isLocationEnabled {
+            authorizationStatusDisabled?()
+        }
     }
 }

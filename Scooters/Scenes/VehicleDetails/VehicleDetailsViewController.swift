@@ -12,6 +12,12 @@ final class VehicleDetailsViewController: UIViewController {
         return stackView
     }()
 
+    private let warningLabel = UILabel()
+        .with(textColor: Asset.Colors.alert.color)
+        .with(font: .bold, size: .body1)
+        .with(textAlignment: .center)
+        .with(text: L10n.locationDisabledWarning)
+
     private let typeLabel = UILabel()
         .with(textColor: Asset.Colors.textPrimary.color)
         .with(font: .regular, size: .body1)
@@ -44,23 +50,50 @@ final class VehicleDetailsViewController: UIViewController {
         customizeViews()
         setupConstraints()
         bindPresenter()
-
-        presenter.viewDidLoad()
     }
 
     private func customizeViews() {
         title = L10n.vehicleDetailsTitle
         view.backgroundColor = Asset.Colors.primaryBackground.color
+        warningLabel.isHidden = true
 
         view.addSubview(stackView.usingAutoLayout())
+        view.addSubview(warningLabel.usingAutoLayout())
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackViewConstraints()
+            stackViewConstraints(),
+            warningLabelConstraints()
         ])
     }
 
+    private func bindPresenter() {
+        presenter.viewModelReceived = { [weak self] viewModel in
+            self?.configure(with: viewModel)
+        }
+    }
+
+    private func configure(with viewModel: VehicleDetailsViewModel) {
+        switch viewModel {
+        case .disabled:
+            warningLabel.isHidden = false
+            stackView.isHidden = true
+
+        case .enabled(let vehicle):
+            warningLabel.isHidden = true
+            stackView.isHidden = false
+            typeLabel.text = vehicle.type
+            batteryLabel.text = vehicle.batteryLevel
+            helmetLabel.text = vehicle.helmetBoxText
+            speedLabel.text = vehicle.maxSpeed
+        }
+    }
+}
+
+// MARK: - Layout
+
+extension VehicleDetailsViewController {
     private func stackViewConstraints() -> [NSLayoutConstraint] {
         [
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -70,16 +103,12 @@ final class VehicleDetailsViewController: UIViewController {
         ]
     }
 
-    private func bindPresenter() {
-        presenter.vehicleReceived = { [weak self] vehicleViewModel in
-            self?.configure(with: vehicleViewModel)
-        }
-    }
-
-    private func configure(with viewModel: VehicleDetailsViewModel) {
-        typeLabel.text = viewModel.type
-        batteryLabel.text = viewModel.batteryLevel
-        helmetLabel.text = viewModel.helmetBoxText
-        speedLabel.text = viewModel.maxSpeed
+    private func warningLabelConstraints() -> [NSLayoutConstraint] {
+        [
+            warningLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
+            warningLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
+            warningLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            warningLabel.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24)
+        ]
     }
 }

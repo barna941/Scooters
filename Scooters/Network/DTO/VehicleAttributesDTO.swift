@@ -1,6 +1,6 @@
 import Foundation
 
-struct VehicleAttributesDTO: Decodable {
+struct VehicleAttributesDTO: Decodable, Equatable {
     let batteryLevel: Int
     let lat: Double
     let lng: Double

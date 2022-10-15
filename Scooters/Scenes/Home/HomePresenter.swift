@@ -19,15 +19,13 @@ final class HomePresenter: HomePresenterProcotol {
 
     func viewDidLoad() {
         updateLoadingVisibility?(true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.interactor.fetchVehicles { [weak self] result in
-                self?.updateLoadingVisibility?(false)
-                switch result {
-                case let .success(dto):
-                    self?.handleVehicles(dto: dto)
-                case .failure:
-                    self?.errorReceived?(.network)
-                }
+        interactor.fetchVehicles { [weak self] result in
+            self?.updateLoadingVisibility?(false)
+            switch result {
+            case let .success(dto):
+                self?.handleVehicles(dto: dto)
+            case .failure:
+                self?.errorReceived?(.network)
             }
         }
     }

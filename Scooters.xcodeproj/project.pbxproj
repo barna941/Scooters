@@ -22,10 +22,15 @@
 		F82A0BAB28F9ECF5004D9B3D /* VehicleDtoExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BAA28F9ECF5004D9B3D /* VehicleDtoExtensions.swift */; };
 		F82A0BB028F9F344004D9B3D /* VehicleDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BAF28F9F344004D9B3D /* VehicleDetailsViewModel.swift */; };
 		F82A0BB228F9F6AB004D9B3D /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BB128F9F6AB004D9B3D /* UILabelExtensions.swift */; };
+		F82A0BB428FAFE2F004D9B3D /* VehicleFinderServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BB328FAFE2F004D9B3D /* VehicleFinderServiceTests.swift */; };
+		F82A0BBB28FB0440004D9B3D /* SwiftyMocky in Frameworks */ = {isa = PBXBuildFile; productRef = F82A0BBA28FB0440004D9B3D /* SwiftyMocky */; };
+		F82A0BBF28FB067D004D9B3D /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BBE28FB067D004D9B3D /* Mock.generated.swift */; };
+		F82A0BC328FB0B96004D9B3D /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BC228FB0B96004D9B3D /* HomeInteractorTests.swift */; };
+		F82A0BC628FB0F9F004D9B3D /* VehicleDTO+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BC528FB0F9F004D9B3D /* VehicleDTO+Builder.swift */; };
+		F82A0BC828FB122A004D9B3D /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A0BC728FB122A004D9B3D /* HomePresenterTests.swift */; };
 		F8921C7D28F60A7000504274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C7C28F60A7000504274 /* AppDelegate.swift */; };
 		F8921C8628F60A7100504274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8921C8528F60A7100504274 /* Assets.xcassets */; };
 		F8921C8928F60A7100504274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8921C8728F60A7100504274 /* LaunchScreen.storyboard */; };
-		F8921C9428F60A7200504274 /* ScootersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C9328F60A7200504274 /* ScootersTests.swift */; };
 		F8921C9E28F60A7200504274 /* ScootersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C9D28F60A7200504274 /* ScootersUITests.swift */; };
 		F8921CA028F60A7200504274 /* ScootersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921C9F28F60A7200504274 /* ScootersUITestsLaunchTests.swift */; };
 		F8921CB328F610AC00504274 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8921CB228F610AC00504274 /* HomeCoordinator.swift */; };
@@ -94,13 +99,17 @@
 		F82A0BAA28F9ECF5004D9B3D /* VehicleDtoExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDtoExtensions.swift; sourceTree = "<group>"; };
 		F82A0BAF28F9F344004D9B3D /* VehicleDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailsViewModel.swift; sourceTree = "<group>"; };
 		F82A0BB128F9F6AB004D9B3D /* UILabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		F82A0BB328FAFE2F004D9B3D /* VehicleFinderServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleFinderServiceTests.swift; sourceTree = "<group>"; };
+		F82A0BBE28FB067D004D9B3D /* Mock.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
+		F82A0BC228FB0B96004D9B3D /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		F82A0BC528FB0F9F004D9B3D /* VehicleDTO+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VehicleDTO+Builder.swift"; sourceTree = "<group>"; };
+		F82A0BC728FB122A004D9B3D /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 		F8921C7928F60A7000504274 /* Scooters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scooters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8921C7C28F60A7000504274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8921C8528F60A7100504274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8921C8828F60A7100504274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8921C8A28F60A7100504274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8921C8F28F60A7200504274 /* ScootersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScootersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8921C9328F60A7200504274 /* ScootersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersTests.swift; sourceTree = "<group>"; };
 		F8921C9928F60A7200504274 /* ScootersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScootersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8921C9D28F60A7200504274 /* ScootersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersUITests.swift; sourceTree = "<group>"; };
 		F8921C9F28F60A7200504274 /* ScootersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScootersUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -151,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F82A0BBB28FB0440004D9B3D /* SwiftyMocky in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +211,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F82A0BBC28FB04D1004D9B3D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F82A0BB328FAFE2F004D9B3D /* VehicleFinderServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F82A0BBD28FB05F5004D9B3D /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F82A0BBE28FB067D004D9B3D /* Mock.generated.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		F82A0BC028FB09C9004D9B3D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F82A0BC128FB09D4004D9B3D /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F82A0BC128FB09D4004D9B3D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F82A0BC228FB0B96004D9B3D /* HomeInteractorTests.swift */,
+				F82A0BC728FB122A004D9B3D /* HomePresenterTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F82A0BC428FB0F8D004D9B3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F82A0BC528FB0F9F004D9B3D /* VehicleDTO+Builder.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F8921C7028F60A6F00504274 = {
 			isa = PBXGroup;
 			children = (
@@ -240,7 +291,10 @@
 		F8921C9228F60A7200504274 /* ScootersTests */ = {
 			isa = PBXGroup;
 			children = (
-				F8921C9328F60A7200504274 /* ScootersTests.swift */,
+				F82A0BC428FB0F8D004D9B3D /* Extensions */,
+				F82A0BBD28FB05F5004D9B3D /* Mocks */,
+				F82A0BC028FB09C9004D9B3D /* Scenes */,
+				F82A0BBC28FB04D1004D9B3D /* Services */,
 			);
 			path = ScootersTests;
 			sourceTree = "<group>";
@@ -440,6 +494,9 @@
 				F8921C9128F60A7200504274 /* PBXTargetDependency */,
 			);
 			name = ScootersTests;
+			packageProductDependencies = (
+				F82A0BBA28FB0440004D9B3D /* SwiftyMocky */,
+			);
 			productName = ScootersTests;
 			productReference = F8921C8F28F60A7200504274 /* ScootersTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -498,6 +555,7 @@
 			packageReferences = (
 				F8921CB628F6126000504274 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F8921CB928F612A000504274 /* XCRemoteSwiftPackageReference "Swinject" */,
+				F82A0BB928FB0440004D9B3D /* XCRemoteSwiftPackageReference "SwiftyMocky" */,
 			);
 			productRefGroup = F8921C7A28F60A7000504274 /* Products */;
 			projectDirPath = "";
@@ -614,7 +672,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8921C9428F60A7200504274 /* ScootersTests.swift in Sources */,
+				F82A0BC828FB122A004D9B3D /* HomePresenterTests.swift in Sources */,
+				F82A0BC628FB0F9F004D9B3D /* VehicleDTO+Builder.swift in Sources */,
+				F82A0BC328FB0B96004D9B3D /* HomeInteractorTests.swift in Sources */,
+				F82A0BBF28FB067D004D9B3D /* Mock.generated.swift in Sources */,
+				F82A0BB428FAFE2F004D9B3D /* VehicleFinderServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,6 +1023,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F82A0BB928FB0440004D9B3D /* XCRemoteSwiftPackageReference "SwiftyMocky" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MakeAWishFoundation/SwiftyMocky";
+			requirement = {
+				kind = exactVersion;
+				version = 4.2.0;
+			};
+		};
 		F8921CB628F6126000504274 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -980,6 +1050,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F82A0BBA28FB0440004D9B3D /* SwiftyMocky */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F82A0BB928FB0440004D9B3D /* XCRemoteSwiftPackageReference "SwiftyMocky" */;
+			productName = SwiftyMocky;
+		};
 		F8921CB728F6126000504274 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F8921CB628F6126000504274 /* XCRemoteSwiftPackageReference "Alamofire" */;

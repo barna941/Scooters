@@ -1,5 +1,5 @@
 import Foundation
 
-struct VehiclesResponseDTO: Decodable {
+struct VehiclesResponseDTO: Decodable, Equatable {
     let data: [VehicleDTO]
 }

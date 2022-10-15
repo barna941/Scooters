@@ -1,6 +1,6 @@
 import Foundation
 
-enum VehicleType: String, Decodable {
+enum VehicleType: String, Decodable, Equatable {
     case escooter
     case emoped
     case ebicycle

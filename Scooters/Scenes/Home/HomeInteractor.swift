@@ -1,5 +1,6 @@
 import Foundation
 
+// sourcery: AutoMockable
 protocol HomeInteractorProtocol {
     func fetchVehicles(completion: @escaping ((Result<VehiclesResponseDTO, Error>) -> Void))
 }

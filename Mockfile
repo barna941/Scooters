@@ -1,0 +1,11 @@
+ScooterTests:
+    sources:
+        include:
+        - ./Scooters
+    output: ./ScootersTests/Mocks/Mock.generated.swift
+    targets:
+    - ScootersTests
+    testable:
+    - Scooters
+    import:
+    - Foundation

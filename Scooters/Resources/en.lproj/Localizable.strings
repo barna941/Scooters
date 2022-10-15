@@ -10,3 +10,4 @@
 "vehicle_type_escooter" = "Escooter";
 "vehicle_type_emoped" = "Emoped";
 "vehicle_type_ebicyle" = "Ebicyle";
+"location_disabled_warning" = "Location services are disabled";

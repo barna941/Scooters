@@ -12,4 +12,16 @@ extension UILabel {
         self.textColor = textColor
         return self
     }
+
+    @discardableResult
+    func with(text: String) -> Self {
+        self.text = text
+        return self
+    }
+
+    @discardableResult
+    func with(textAlignment: NSTextAlignment) -> Self {
+        self.textAlignment = textAlignment
+        return self
+    }
 }

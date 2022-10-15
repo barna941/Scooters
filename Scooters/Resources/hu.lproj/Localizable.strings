@@ -10,3 +10,4 @@
 "vehicle_type_escooter" = "E-roller";
 "vehicle_type_emoped" = "E-moped";
 "vehicle_type_ebicyle" = "E-bicikli";
+"location_disabled_warning" = "Helymeghatározás nincsen engedélyezve";

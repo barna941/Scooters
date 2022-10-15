@@ -14,6 +14,8 @@ internal enum L10n {
   internal static let homeTitle = L10n.tr("Localizable", "home_title", fallback: "Vehicles")
   /// km/h
   internal static let kilometersPerHour = L10n.tr("Localizable", "kilometers_per_hour", fallback: "km/h")
+  /// Location services are disabled
+  internal static let locationDisabledWarning = L10n.tr("Localizable", "location_disabled_warning", fallback: "Location services are disabled")
   /// An error occured during network communication
   internal static let networkError = L10n.tr("Localizable", "network_error", fallback: "An error occured during network communication")
   /// OK

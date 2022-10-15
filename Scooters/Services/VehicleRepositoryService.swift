@@ -1,5 +1,6 @@
 import Foundation
 
+// sourcery: AutoMockable
 protocol VehicleRepositoryServiceProtocol: AnyObject {
     var vehiclesUpdated: (() -> Void)? { get set }
     var vehicles: [VehicleDTO] { get }

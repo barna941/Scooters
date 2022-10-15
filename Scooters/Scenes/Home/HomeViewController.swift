@@ -15,9 +15,10 @@ final class HomeViewController: UIViewController, ErrorHandlingView {
         mapView.delegate = self
         mapView.register(VehicleAnnotationView.self, forAnnotationViewWithReuseIdentifier: VehicleAnnotationView.reuseIdentifier)
         mapView.register(VehicleClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: VehicleClusterAnnotationView.reuseIdentifier)
-        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
         return mapView
     }()
+    private var mapCenteredToUser = false
 
     init(presenter: HomePresenterProcotol) {
         self.presenter = presenter
@@ -124,5 +125,13 @@ extension HomeViewController: MKMapViewDelegate {
         )
         annotationView.configure(with: vehicleAnnotation.icon)
         return annotationView
+    }
+
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        guard !mapCenteredToUser else { return }
+        mapView.centerCoordinate = userLocation.coordinate
+        let coordinate = mapView.convert(CGPoint(x: mapView.frame.midX, y: mapView.frame.height * 0.75), toCoordinateFrom: mapView)
+        mapView.setCenter(coordinate, animated: true)
+        mapCenteredToUser = true
     }
 }

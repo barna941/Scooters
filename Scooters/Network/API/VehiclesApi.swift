@@ -1,5 +1,6 @@
 import Foundation
 
+// sourcery: AutoMockable
 protocol VehiclesApiProtocol {
     func fetchVehicles(completion: @escaping (Result<VehiclesResponseDTO, Error>) -> Void)
 }
